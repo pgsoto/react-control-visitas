@@ -3,7 +3,6 @@ import axios from 'axios'
 import Noty from 'noty'
 import moment from 'moment'
 import { Table, Modal, Form, Button } from 'react-bootstrap';
-import { resolveSoa } from 'dns';
 
 class Visitantes extends Component {
 
