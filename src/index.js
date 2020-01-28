@@ -21,10 +21,12 @@ moment.locale('es');
 
 let API_URI
 
-if (process.env.NODE_ENV !== 'production') {
-    API_URI = 'http://localhost:3000'
+if (process.env.NODE_ENV === 'production') {
+    // API_URI = process.env.API_URI
+    API_URI = 'https://node-control-visitas.herokuapp.com'
 } else {
-    API_URI = process.env.API_URI
+    API_URI = 'http://localhost:3000'
+    API_URI = 'https://node-control-visitas.herokuapp.com'
 }
 axios.defaults.baseURL = API_URI
 
