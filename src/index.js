@@ -19,7 +19,14 @@ Noty.overrideDefaults({
 
 moment.locale('es');
 
-axios.defaults.baseURL = 'https://node-control-visitas.herokuapp.com';
+let API_URI
+
+if (process.env.NODE_ENV !== 'production') {
+    API_URI = 'http://localhost:3000'
+} else {
+    API_URI = process.env.API_URI
+}
+axios.defaults.baseURL = API_URI
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

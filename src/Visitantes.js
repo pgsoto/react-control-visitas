@@ -104,7 +104,7 @@ class Visitantes extends Component {
                                 <tr key={k}>
                                     <td>{x.rut}</td>
                                     <td>{x.nombre}</td>
-                                    <td>{x.departamento}</td>
+                                    <td>{x.departamento.numero}</td>
                                     <td>{moment(x.timestamp).format('DD-MM-YYYY HH:mm')}</td>
                                 </tr>
                             )
@@ -156,7 +156,7 @@ class Visitantes extends Component {
                         {
                             this.state.deptos.map((x, k) => {
                                 return (
-                                    <option key={k} value={x.numero}>{x.numero}</option>
+                                    <option key={k} value={x._id}>{x.numero}</option>
                                 )
                             })
                         }
@@ -175,6 +175,7 @@ class Visitantes extends Component {
                 <Button variant="primary" className="mb-2" onClick={() => this.setState({ show: true })}>Registrar</Button>
                 {this.tabla()}
                 {this.modal()}
+                {/* {JSON.stringify(this.state.data, null, 2)} */}
             </>
         )
     }
