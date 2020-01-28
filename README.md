@@ -5,6 +5,9 @@ Proyecto que fue desarrollado con ReactJS para Frontend y NodeJS para API REST
 
 [Ver demo](https://react-control-visitas.herokuapp.com/).
 
+Configurar Variable de Entorno
+API_URI = <"URL BASE API">
+
 ### `npm start`
 
 Ejecutar en modo producción (montado en heroku)

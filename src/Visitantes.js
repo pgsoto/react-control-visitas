@@ -87,6 +87,7 @@ class Visitantes extends Component {
 
 
     tabla = () => {
+        const { data } = this.state
         return (
             <Table bordered hover size="sm">
                 <thead>
@@ -99,7 +100,8 @@ class Visitantes extends Component {
                 </thead>
                 <tbody>
                     {
-                        this.state.data.map((x, k) => {
+                        data &&
+                        data.map((x, k) => {
                             return (
                                 <tr key={k}>
                                     <td>{x.rut}</td>
@@ -139,6 +141,7 @@ class Visitantes extends Component {
 
     formulario = () => {
         const { handleSubmit, handleInputChange } = this;
+        const { deptos } = this.state
         return (
             <Form onSubmit={handleSubmit} autoComplete="off">
                 <Form.Group controlId="form.rut">
@@ -154,7 +157,8 @@ class Visitantes extends Component {
                     <Form.Control as="select" name="departamento" onChange={handleInputChange} required>
                         <option disabled selected >Seleccione...</option>
                         {
-                            this.state.deptos.map((x, k) => {
+                            deptos &&
+                            deptos.map((x, k) => {
                                 return (
                                     <option key={k} value={x._id}>{x.numero}</option>
                                 )
